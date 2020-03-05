@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt-nodejs')
 module.exports = app => {
     const signin = async (req, res) => {
         
-        if (req.body.email && req.body.password) {
+        if (req.body.email.trim() && req.body.password.trim()) {
             
             // Consulta usuario na base
             const user = await app.db('users')
