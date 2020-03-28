@@ -9,7 +9,7 @@ module.exports = app => {
             
             // Consulta usuario na base
             const user = await app.db('users')
-                .where({ email: req.body.email })
+                .where({ email: req.body.email.toLowerCase() })
                 .first()
 
             if (user) {
